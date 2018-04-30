@@ -328,8 +328,8 @@ class SonyAPI():
             # Direct class call `threading.Thread` instead of `super()` for python2 capability
             threading.Thread.__init__(self)
             self.lv_url = url
-            self._lilo_head_pool = LifoQueue()
-            self._lilo_jpeg_pool = LifoQueue()
+            self._lilo_head_pool = LifoQueue(2)
+            self._lilo_jpeg_pool = LifoQueue(2)
 
             self.header = None
             self.frameinfo = []
