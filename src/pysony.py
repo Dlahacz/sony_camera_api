@@ -362,6 +362,7 @@ class SonyAPI():
 
                     sess.read(payload['padding_size'])
                 except Exception as e:
+                    sess = urlopen(self.lv_url)
                     print("[ERROR]" + str(e))
 
         def get_header(self):
